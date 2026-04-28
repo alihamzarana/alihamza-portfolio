@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light-first design system — colors in HSL */
+@layer base {
+  :root {
+    --background: 210 45% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 239 84% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 214 32% 93%;
+    --muted-foreground: 215 16% 40%;
+
+    --accent: 187 85% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 239 84% 56%;
+
+    --radius: 0.85rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(239 84% 56%), hsl(262 83% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(262 83% 58%), hsl(187 85% 43%));
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(239 84% 56% / 0.12),
+      hsl(262 83% 58% / 0.1),
+      hsl(187 85% 43% / 0.08)
+    );
+    --gradient-mesh: radial-gradient(at 20% 30%, hsl(239 84% 96%) 0%, transparent 50%),
+      radial-gradient(at 80% 20%, hsl(262 83% 94%) 0%, transparent 45%),
+      radial-gradient(at 50% 80%, hsl(187 85% 94%) 0%, transparent 45%);
+
+    --shadow-sm: 0 2px 12px hsl(222 47% 11% / 0.06);
+    --shadow-md: 0 8px 30px hsl(222 47% 11% / 0.08);
+    --shadow-lg: 0 20px 50px hsl(239 84% 56% / 0.12);
+    --shadow-glow: 0 12px 48px hsl(239 84% 56% / 0.22);
+
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --font-heading: "Inter", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+    --sidebar-background: 210 45% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 239 84% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 32% 93%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 88%;
+    --sidebar-ring: 239 84% 56%;
+  }
+
+  .dark {
+    --background: 220 23% 8%;
+    --foreground: 210 20% 98%;
+    --card: 224 40% 10%;
+    --card-foreground: 210 20% 98%;
+    --muted: 223 40% 14%;
+    --muted-foreground: 215 20% 65%;
+    --border: 223 40% 18%;
+    --input: 223 40% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    background-image: var(--gradient-mesh);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+
+  code,
+  pre {
+    font-family: var(--font-mono);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background-image: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  /* Gradient fill on glyphs — needs webkit clip or text renders invisible + looks like a solid bar */
+  .text-gradient {
+    display: inline-block;
+    background-image: var(--gradient-primary);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-brand {
+    display: inline-block;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--primary)),
+      hsl(var(--secondary)),
+      hsl(var(--accent))
+    );
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 10s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow-pulse 2.5s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+
+  .glass {
+    @apply backdrop-blur-xl bg-white/70 border border-border/90 shadow-md;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-xl bg-white/85 border-b border-border shadow-sm;
+  }
+
+  /* Scroll Animations */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .scroll-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
