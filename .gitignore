@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 .env
 .env*
+
+# Local tooling (e.g. portable gh CLI used by scripts)
+.tools/
