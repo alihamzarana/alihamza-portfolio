@@ -10,7 +10,7 @@ const Projects = () => {
       title: "Waltz AI",
       description:
         "Built and refined the user-facing experience for an AI marketing suite, including responsive dashboards, landing page builders, CRM screens, campaign flows, and analytics views like heatmaps, opens, and clicks, with strong focus on usability and clean visual hierarchy.",
-      technologies: ["React", "Material UI", "Frontend UI libraries", "REST APIs", "Node.js"],
+      technologies: ["Next.js", "Tailwind CSS", "Redux Toolkit", "REST APIs", "Node.js"],
       link: "https://waltz-ai.com/",
       highlights: ["Frontend architecture", "Reusable UI components", "UI/UX polish & consistency"],
     },
@@ -19,9 +19,9 @@ const Projects = () => {
       description:
         "Worked on the product experience for AI voice workflows, shaping onboarding, conversation management pages, call insight panels, and admin views that make support automation easy to operate with simple navigation and intuitive layouts.",
       technologies: [
-        "React",
-        "Material UI",
-        "Frontend UI libraries",
+        "React.js",
+        "Chakra UI",
+        "TypeScript",
         "Voice platform integrations",
         "Node.js",
       ],
@@ -33,9 +33,10 @@ const Projects = () => {
       description:
         "Designed and implemented a smooth registration journey for students, parents, and staff: students can sign up directly, parents can add student profiles, and staff can register and apply for open vacancies, supported by user-friendly forms and clear feedback states.",
       technologies: [
-        "React",
+        "React.js",
         "Material UI",
-        "Frontend UI libraries",
+        "Lucid components",
+        "React Hook Form",
         "Node.js",
         "MySQL",
       ],
