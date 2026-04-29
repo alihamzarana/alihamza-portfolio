@@ -26,7 +26,7 @@ const Experience = () => {
     },
     {
       company: "Cooperative Computing",
-      position: "Node.js Developer",
+      position: "MERN Stack Developer",
       location: "Lahore, Pakistan",
       period: "2021 – 2022",
       responsibilities: [
