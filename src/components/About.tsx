@@ -39,8 +39,8 @@ const About = () => {
                 platforms to AI-assisted marketing suites.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                I've contributed at Cooperative Computing as a MERN stack developer and at CraftyTer
-                Solution as a Node.js developer,
+                I've contributed at Crafter Solutions as a Node.js developer and at Cooperative Computing
+                as a MERN stack developer,
                 and since 2023 I've been building production systems at AlBurraq Technologies alongside
                 client-facing products like Waltz AI and Olleh.ai.
               </p>

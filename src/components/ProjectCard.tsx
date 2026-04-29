@@ -1,5 +1,6 @@
 import { ExternalLink, Github, Code2 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useIsMobile } from "@/hooks/use-mobile";
 import Tilt from "react-parallax-tilt";
 
 interface ProjectCardProps {
@@ -22,6 +23,7 @@ const ProjectCard = ({
   index,
 }: ProjectCardProps) => {
   const { ref, isVisible } = useScrollAnimation({ once: true });
+  const isMobile = useIsMobile();
 
   const animationDelay = `${index * 100}ms`;
   const isPlayStore = link.includes("play.google.com");
@@ -33,13 +35,13 @@ const ProjectCard = ({
       style={{ animationDelay }}
     >
       <Tilt
-        tiltMaxAngleX={12}
-        tiltMaxAngleY={12}
+        tiltMaxAngleX={isMobile ? 0 : 12}
+        tiltMaxAngleY={isMobile ? 0 : 12}
         perspective={900}
-        scale={1.03}
+        scale={isMobile ? 1 : 1.03}
         transitionSpeed={400}
-        gyroscope={true}
-        glareEnable={true}
+        gyroscope={!isMobile}
+        glareEnable={!isMobile}
         glareMaxOpacity={0.12}
         glareColor="#4f46e5"
         glarePosition="all"
@@ -47,7 +49,7 @@ const ProjectCard = ({
       >
         <div className="h-1.5 w-full bg-gradient-to-r from-primary via-secondary to-accent" />
 
-        <div className="p-6 flex flex-col min-h-[460px]">
+        <div className="p-5 sm:p-6 flex flex-col min-h-0 sm:min-h-[460px]">
           <div className="flex items-start gap-4 mb-4">
             <div className="flex-shrink-0 w-12 h-12 rounded-xl gradient-primary flex items-center justify-center group-hover:shadow-md transition-all shadow-sm">
               <Code2 className="w-6 h-6 text-primary-foreground" />
@@ -59,7 +61,9 @@ const ProjectCard = ({
             </div>
           </div>
 
-          <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-[8]">{description}</p>
+          <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-6 sm:line-clamp-[8]">
+            {description}
+          </p>
 
           <div className="space-y-1.5 mb-4 flex-shrink-0">
             {highlights.slice(0, 3).map((highlight, idx) => (
@@ -70,7 +74,7 @@ const ProjectCard = ({
             ))}
           </div>
 
-          <div className="flex-grow min-h-[1rem]" />
+          <div className="hidden sm:block flex-grow min-h-[1rem]" />
 
           <div className="flex flex-wrap gap-2 mb-4 flex-shrink-0">
             {technologies.slice(0, 5).map((tech, idx) => (

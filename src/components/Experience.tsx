@@ -14,25 +14,25 @@ const Experience = () => {
       ],
     },
     {
-      company: "CraftyTer Solution",
-      position: "Node.js Developer",
-      location: "Lahore, Pakistan",
-      period: "2022 – 2023",
-      responsibilities: [
-        "Developed server-side features with Node.js and Express (or Nest), integrating REST APIs and data layers",
-        "Implemented authentication flows, business logic, and third-party integrations",
-        "Worked with front-end teams to ship cohesive features and resolve production issues",
-      ],
-    },
-    {
       company: "Cooperative Computing",
       position: "MERN Stack Developer",
       location: "Lahore, Pakistan",
-      period: "2021 – 2022",
+      period: "2022 – 2023",
       responsibilities: [
         "Built and maintained backend services with Node.js, focusing on APIs and database-backed workflows",
         "Participated in code reviews, testing, and iterative delivery in an agile environment",
         "Strengthened fundamentals in JavaScript, async patterns, and scalable service design",
+      ],
+    },
+    {
+      company: "Crafter Solutions",
+      position: "Node.js Developer",
+      location: "Lahore, Pakistan",
+      period: "2021 – 2022",
+      responsibilities: [
+        "Developed server-side features with Node.js and Express (or Nest), integrating REST APIs and data layers",
+        "Implemented authentication flows, business logic, and third-party integrations",
+        "Worked with front-end teams to ship cohesive features and resolve production issues",
       ],
     },
   ];
