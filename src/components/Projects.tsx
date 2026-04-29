@@ -7,6 +7,42 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Waltz AI",
+      description:
+        "Built and refined the user-facing experience for an AI marketing suite, including responsive dashboards, landing page builders, CRM screens, campaign flows, and analytics views like heatmaps, opens, and clicks, with strong focus on usability and clean visual hierarchy.",
+      technologies: ["React", "Material UI", "Frontend UI libraries", "REST APIs", "Node.js"],
+      link: "https://waltz-ai.com/",
+      highlights: ["Frontend architecture", "Reusable UI components", "UI/UX polish & consistency"],
+    },
+    {
+      title: "Olleh.ai",
+      description:
+        "Worked on the product experience for AI voice workflows, shaping onboarding, conversation management pages, call insight panels, and admin views that make support automation easy to operate with simple navigation and intuitive layouts.",
+      technologies: [
+        "React",
+        "Material UI",
+        "Frontend UI libraries",
+        "Voice platform integrations",
+        "Node.js",
+      ],
+      link: "https://olleh.ai/",
+      highlights: ["Customer-facing UI flows", "Responsive dashboards", "UI/UX for voice journey interfaces"],
+    },
+    {
+      title: "Pudder AI",
+      description:
+        "Designed and implemented a smooth registration journey for students, parents, and staff: students can sign up directly, parents can add student profiles, and staff can register and apply for open vacancies, supported by user-friendly forms and clear feedback states.",
+      technologies: [
+        "React",
+        "Material UI",
+        "Frontend UI libraries",
+        "Node.js",
+        "MySQL",
+      ],
+      link: "#",
+      highlights: ["Role-based registration UX", "Multi-step form design", "Accessible and user-friendly UI/UX"],
+    },
+    {
       title: "Degree37",
       description:
         "Advanced blood donor portal for registration and engagement—multitenant architecture, ACL, and integrations that connect donors and recipients.",
@@ -23,28 +59,12 @@ const Projects = () => {
       highlights: ["Microservices", "Admin portal", "API development"],
     },
     {
-      title: "Waltz AI",
-      description:
-        "AI-powered marketing suite: AI website & landing page builder, CRM with insights, email campaigns, AI Design Centre for visuals, analytics (heatmaps, opens, clicks), and assistant “Walter” for guided workflows—Business & Pro plans with credits and integrations.",
-      technologies: ["React", "Node.js", "REST APIs", "CRM", "Analytics", "AI integrations"],
-      link: "https://waltz-ai.com/",
-      highlights: ["Full-stack product features", "CRM & campaigns", "AI builders & analytics"],
-    },
-    {
       title: "Vertex Inspector",
       description:
         "Mobile inspection app for assets: record defects with photos, titles, assignees, and comments; organize issues into projects with site and client metadata; export defect schedules to CSV. Contributed across the mobile/web frontend, Node.js backend services, and admin tooling.",
       technologies: ["React Native / Mobile UI", "Node.js", "REST APIs", "Admin dashboard"],
       link: "https://play.google.com/store/apps/details?id=com.alburraq.vertex&hl=en",
       highlights: ["Field workflows", "Reporting & CSV", "Admin + backend"],
-    },
-    {
-      title: "Olleh.ai",
-      description:
-        "AI voice and conversational platform oriented toward customer calls and support—automating outreach, intelligent routing, and scalable voice-driven experiences (positioned as AI voice agents for customer engagement). Work spanned customer-facing flows and supporting backend services.",
-      technologies: ["Node.js", "Voice / telephony integrations", "React", "AI / NLP pipelines"],
-      link: "https://olleh.ai/",
-      highlights: ["Voice & support automation", "Frontend + Node backend", "Product integrations"],
     },
   ];
 

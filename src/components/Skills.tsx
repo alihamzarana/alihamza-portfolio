@@ -14,6 +14,7 @@ const Skills = () => {
         "CSS3",
         "Tailwind CSS",
         "Responsive UI",
+        "UI / UX & Design",
       ],
     },
     {

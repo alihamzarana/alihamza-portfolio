@@ -10,7 +10,7 @@ const Education = () => {
               Education <span className="text-gradient">Background</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Academic foundation in computer science and engineering
+              Academic foundation in computer science
             </p>
           </div>
 
@@ -22,7 +22,7 @@ const Education = () => {
                 </div>
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-2">Bachelor of Science in Computer Engineering</h3>
+                <h3 className="text-2xl font-bold mb-2">Bachelor of Science in Computer Science</h3>
                 <div className="text-lg text-primary font-medium mb-3">
                   Shaheed Zulfikar Ali Bhutto Institute of Science and Technology (SZABIST), Islamabad
                 </div>
